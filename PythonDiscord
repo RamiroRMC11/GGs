@@ -1,0 +1,122 @@
+
+import discord
+from discord import member
+from discord.ext import commands
+import random
+
+TOKEN ="OTMzMTM0NjI1MzQ0MjIxMjU1.YedHVw.HjQwkm5uTSBCU05354IlmY6yXkg"
+
+bot= commands.Bot(command_prefix= 'r!')
+
+lista=["""
+— ¿Por qué las focas del circo miran siempre hacia arriba? 
+— Porque es donde están los focos.""",
+"""
+¿está Agustín? 
+— No, estoy incomodín.
+""","""
+— ¿Dónde cuelga Superman su supercapa? 
+— En su perchero
+"""
+,
+"""
+-¿alguna vez te has perdido?
+-si, en tu mirada
+-que bonito ¿en serio?
+-si, como eres bizca no se a donde estas mirando
+"""
+,
+"""
+Si mis besos fueran WiFi, ¿me los pedirías o me los robarías?
+
+- Usaría datos móviles...
+"""
+,
+"""
+Uno que va a una entrevista de trabajo y hablando del salario:
+
+- Pues empezarás cobrando 1000 € y más adelante 2000 €.
+
+- Ah, pues ya vendré más adelante
+"""
+,
+"""
+-¿Quién es la persona que más se ríe? 
+-El barrendero, porque siempre va riendo.
+"""
+,
+"""
+-¿Cómo se llama el primo vegetariano de Bruce Lee? Pues, Broco Lee
+"""
+,
+"""
+-¿Qué le dijo la luna al sol? 
+-Eres tan grande y todavía no te dejan salir de noche.
+"""
+,
+"""
+En una entrevista de trabajo:
+- ¿Nivel de inglés?
+- Alto
+- Bien. Traduzca "fiesta".
+- Party
+- Perfecto. Úselo en una frase.
+- Ayer me party la cara con la bicicleta.
+- Contratado.
+
+"""
+,
+"""
+- ¿Nivel de inglés?
+- Alto.
+- Diga “memoria”.
+- Memory.
+- Póngalo en una frase.
+- Salté por una ventana y memory.
+- Contratado.
+"""
+,
+"""
+- Oiga. ¿Se puede llamar imbécil a un juez?
+- No.
+- ¿Y llamar "señor juez" a un imbécil?
+- Eso sí.
+- Gracias, señor juez.
+"""
+,
+"""
+Tía Teresa, ¿para qué te pintas?
+- Para estar más guapa.
+- ¿Y tarda mucho en hacer efecto?
+"""
+,
+"""
+Un gato y un gallo van por un puente. El gato se cae y dice:
+-Miaogo, miaogo.
+Y el gallo contesta:
+-Kikirikiaga, Kikirikiaga.
+"""
+]
+
+listaelegida=random.randint(0,2)
+
+    
+@bot.command(pass_context = True)
+async def chiste(dato):
+    await dato.send(lista[random.randint(0,12)])
+
+@bot.event 
+async def on_ready():
+    print("BOT ENCENDIDO")
+
+@bot.command(pass_context =True)
+async def gay(dato,arg):
+    sumado=random.randint(0,100)
+    await dato.send("{} es un {}% gay".format(arg,sumado))
+
+@bot.command(pass_context =True)
+async def fachero(dato,arg):
+    sumado=random.randint(0,100)
+    await dato.send("{} es  {}% fachero".format(arg,sumado))     
+
+bot.run(TOKEN)
