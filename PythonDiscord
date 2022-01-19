@@ -4,8 +4,6 @@ from discord import member
 from discord.ext import commands
 import random
 
-TOKEN ="OTMzMTM0NjI1MzQ0MjIxMjU1.YedHVw.HjQwkm5uTSBCU05354IlmY6yXkg"
-
 bot= commands.Bot(command_prefix= 'r!')
 
 lista=["""
@@ -118,5 +116,7 @@ async def gay(dato,arg):
 async def fachero(dato,arg):
     sumado=random.randint(0,100)
     await dato.send("{} es  {}% fachero".format(arg,sumado))     
+
+TOKEN ="OTMzMTM0NjI1MzQ0MjIxMjU1.YedHVw.HjQwkm5uTSBCU05354IlmY6yXkg"
 
 bot.run(TOKEN)
